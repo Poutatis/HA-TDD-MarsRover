@@ -43,15 +43,15 @@ public class MarsRoverImpl implements MarsRover {
     private void moveForward(){
         switch (direction) {
             case NORTH:
-                if (y == MAX_Y - 1) {
-                    y = MIN_Y;
+                if (y == MIN_Y) {
+                    y = MAX_Y;
                 } else {
                     y++;
                 }
                 break;
             case SOUTH:
-                if (y == MIN_Y) {
-                    y = MAX_Y;
+                if (y == MAX_Y) {
+                    y = MIN_Y;
                 } else {
                     y--;
                 }
@@ -79,21 +79,21 @@ public class MarsRoverImpl implements MarsRover {
                 if (y == MIN_Y) {
                     y = MAX_Y;
                 } else {
-                    y--;
+                    y++;
                 }
                 break;
             case SOUTH:
-                if (y == MAX_Y) {
-                    y = MIN_Y;
+                if (y == MIN_Y) {
+                    y = MAX_Y;
                 } else {
-                    y++;
+                    y--;
                 }
                 break;
             case EAST:
                 if (x == MIN_X) {
                     x = MAX_X;
                 } else {
-                    x--;
+                    x++;
                 }
                 break;
             case WEST:
@@ -105,14 +105,6 @@ public class MarsRoverImpl implements MarsRover {
                 break;
         }
     }
-
-
-
-
-
-
-
-
 
     private void turnLeft(){
         switch (direction) {
@@ -147,8 +139,6 @@ public class MarsRoverImpl implements MarsRover {
                 break;
         }
     }
-
-
 
     @Override
     public Coordinates2D getCurrentLocation() {
